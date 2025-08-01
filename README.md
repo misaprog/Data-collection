@@ -228,3 +228,90 @@ df = pd.read_csv("ファイル名.csv", encoding="utf-8")
 このノートを「Pandas基本操作の導入メモ」として活用すると良いです！
 
 
+「recipes.head()」の説明ですね！
+
+`recipes.head()` は、PandasのDataFrameでよく使われるメソッドで、データの最初の数行（デフォルトは5行）を表示します。
+
+### 具体的に何をするか？
+
+* 読み込んだCSVファイルの中身をざっと確認したいときに使います。
+* データの構造やカラム（列）名、どんな値が入っているかの概要が掴めます。
+
+---
+
+### 例
+
+```python
+import pandas as pd
+
+recipes = pd.read_csv("recipes.csv")  # CSVファイルをDataFrameとして読み込む
+
+print(recipes.head())  # 最初の5行を表示する
+```
+
+---
+
+### 表示例
+
+```
+   RecipeID          Name       Ingredients      Calories
+0        1   Spaghetti     Tomato, Pasta      350
+1        2   Pancakes      Flour, Egg, Milk  250
+2        3   Salad         Lettuce, Tomato    150
+3        4   Omelette      Egg, Cheese        200
+4        5   Burger        Beef, Bun, Lettuce 550
+```
+
+---
+
+このように、データの一部を簡単に見られるので、データ解析や処理を始める前に中身を確認するのにとても便利です。
+
+もし、最初の10行だけ見たい場合は `recipes.head(10)` のように数字を指定できますよ。
+
+---
+`recipes.shape` の説明ですね。
+
+---
+
+## `recipes.shape` とは？
+
+`shape` は、PandasのDataFrameやNumPyの配列に使える**属性**で、そのデータの\*\*サイズ（行数と列数）\*\*を教えてくれます。
+
+---
+
+### 具体的には？
+
+* `(行数, 列数)` の形でタプル（2つの値のセット）が返ってきます。
+* たとえば `(100, 5)` なら、「100行5列」のデータという意味です。
+
+---
+
+### 例
+
+```python
+import pandas as pd
+
+recipes = pd.read_csv("recipes.csv")
+print(recipes.shape)
+```
+
+もしデータが1000行、8列あれば
+
+```
+(1000, 8)
+```
+
+と表示されます。
+
+---
+
+### どう使う？
+
+* データの大きさを確認したいときに便利。
+* たとえば「このデータは何行何列あるのかな？」とすぐわかるので、処理の計画やメモリの見積もりにも役立ちます。
+
+---
+
+
+
+
